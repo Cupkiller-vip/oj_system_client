@@ -5,11 +5,11 @@
       <div class="nav">
         <navItemView
           v-for="item in nav"
-          :sort="item.sort"
+          :name="item.name"
           :id="item.id"
         ></navItemView>
       </div>
-      <div class="questions">
+      <div v-if="home.theme" class="questions">
         <div class="introduce">
           <div class="theme">{{ home.theme }}</div>
           <div class="detail">
@@ -33,13 +33,16 @@
           style="align-self: center; margin-top: auto"
         ></el-pagination>
       </div>
+      <div v-else class="homeShow">
+        <div class="animate__animated animate__fadeIn">欢迎使用我们的OJ平台 ——Geeklut</div>
+      </div>
     </main>
     <footer></footer>
   </div>
 </template>
 <script setup>
 import { onMounted, ref } from "vue";
-import { homeApi } from "../api/homeApi";
+import homeApi from "../api/homeApi";
 import { homeStore } from "../stores/home";
 import QuestionView from "./QuestionView.vue";
 import NavItemView from "./NavItemView.vue";
@@ -72,11 +75,17 @@ main {
   min-height: 100vh;
   background-color: #fafcff;
 }
-.questions {
+.questions,
+.homeShow {
   display: flex;
   flex-direction: column;
   width: 70%;
   min-height: 100vh;
+}
+.homeShow {
+  font-size: 0.2rem;
+  justify-content: center;
+  align-items: center;
 }
 .introduce {
   height: 0.8rem;

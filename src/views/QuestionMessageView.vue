@@ -114,8 +114,13 @@ function reset() {
 }
 async function submit() {
   let req = {
-    code: setting.value,
-    id: props.id,
+    Language: "C_CPP",
+    Name: "%(W[Xp5",
+    Debug: true,
+    Input: "75",
+    TimeOut: 1,
+    SrcData: "#include <iostream> \nusing namespace std; \nconst int N = 1e9; \nint main(void) \n{ \n    char n[110]; \n    int *a = new int[N]; \n    for (int i = 0; i < N; i++) \n        a[i] = i; \n    cin >> n; \n    cout << n; \n    return 0; \n}",
+    Version: "11"
   };
   let res = await questionApi.codeSubmit(req);
 }

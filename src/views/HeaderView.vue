@@ -2,8 +2,8 @@
   <div class="header">
     <div class="image"></div>
     <div class="search">
-      <input class="input" v-model="state.input"/>
-      <div class="searchButton hvr-fade">
+      <input class="input" v-model="state.input" />
+      <div class="searchButton hvr-fade" @click="searchMain">
         <svg
           class="searchIcon"
           viewBox="0 0 1024 1024"
@@ -43,6 +43,12 @@ const user = userStore();
 const state = reactive({
   input: "",
 });
+function searchMain() {
+  $router.push({
+    name: "search",
+    params: state.input,
+  });
+}
 function goUser() {
   $router.push({
     name: "user",

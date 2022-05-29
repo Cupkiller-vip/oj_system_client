@@ -30,6 +30,12 @@ const router = createRouter({
       props: true,
     },
     {
+      path: "/search/:content",
+      name: "search",
+      component: () => import("@/views/SearchView.vue"),
+      props: true,
+    },
+    {
       path: "/test",
       name: "test",
       component: () => import("@/views/TestView.vue"),

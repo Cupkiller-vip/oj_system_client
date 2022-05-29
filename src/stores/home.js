@@ -21,12 +21,4 @@ export const homeStore = defineStore({
       this.list = [];
     },
   },
-  persist: {
-    enabled: true,
-    strategies: [
-      {
-        storage: localStorage,
-      },
-    ],
-  },
 });

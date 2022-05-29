@@ -9,7 +9,7 @@ function verify() {
 
 function login(data) {
   return axios({
-    url: "http://127.0.0.1:4523/mock/682629/loginApiTest",
+    url: "http://127.0.0.1:4523/mock/848313/loginApiTest",
     method: "post",
     data,
   });
@@ -17,7 +17,7 @@ function login(data) {
 
 function register(data) {
   return axios({
-    url: "http://127.0.0.1:4523/mock/682629/registerApiTest",
+    url: "http://127.0.0.1:4523/mock/848313/registerApiTest",
     method: "post",
     data,
   });

@@ -1,18 +1,18 @@
 <template>
   <div class="navItem hvr-sweep-to-right" @click="listGet">
-    {{ props.sort }}
+    {{ props.name }}
   </div>
 </template>
 <script setup>
 import { defineProps } from "vue";
 import { homeStore } from "../stores/home";
-import { homeApi } from "../api/homeApi";
+import homeApi from "../api/homeApi";
 import { ElMessage } from "element-plus";
 
 const home = homeStore();
 const props = defineProps({
-  id: Number,
-  sort: String,
+  id: String,
+  name: String,
 });
 async function listGet() {
   let req = {
